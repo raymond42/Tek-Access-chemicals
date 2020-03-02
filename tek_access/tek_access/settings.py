@@ -31,15 +31,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'tek_access.apps.authentication',
-    'tek_access',
-    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tek_access',
+    'rest_framework',
+    'tek_access.apps.authentication',
+    'frontend',
 ]
 
 MIDDLEWARE = [
