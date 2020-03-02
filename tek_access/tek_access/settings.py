@@ -41,8 +41,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'tek_access.apps.authentication',
     'frontend',
+    'knox'
 ]
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'knox.auth.TokenAuthentication',)
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

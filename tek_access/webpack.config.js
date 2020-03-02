@@ -1,4 +1,9 @@
 module.exports = {
+    entry: ['babel-polyfill', './test.js'],
+
+    output: {
+        filename: 'bundle.js'
+    },
     module: {
         rules: [
             {
@@ -7,6 +12,17 @@ module.exports = {
                 use: {
                     loader: "babel-loader"
                 }
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: 'style-loader'
+                    },
+                    {
+                        loader: 'css-loader'
+                    }
+                ]
             }
         ]
     }

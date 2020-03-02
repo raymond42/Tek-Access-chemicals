@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('', include('frontend.urls')),
-    path('', include('tek_access.apps.authentication.urls'))
+    path('', include('tek_access.apps.authentication.urls')),
+    path('', include('accounts.urls'))
 ]
