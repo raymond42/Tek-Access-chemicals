@@ -2,7 +2,8 @@ module.exports = {
     entry: ['babel-polyfill', './test.js'],
 
     output: {
-        filename: 'bundle.js'
+        filename: 'main.js',
+        publicPath: "/static/frontend/"
     },
     module: {
         rules: [
@@ -15,15 +16,27 @@ module.exports = {
             },
             {
                 test: /\.css$/,
+                loader: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.(png|svg|jpg|gif|ttf|woff|woff2|eot)$/,
                 use: [
                     {
-                        loader: 'style-loader'
+                        loader: 'file-loader'
                     },
-                    {
-                        loader: 'css-loader'
-                    }
-                ]
-            }
+                ],
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    // Creates `style` nodes from JS strings
+                    'style-loader',
+                    // Translates CSS into CommonJS
+                    'css-loader',
+                    // Compiles Sass to CSS
+                    'sass-loader',
+                ],
+            },
         ]
     }
 }

@@ -14,13 +14,15 @@ import
 import AlertTemplate from 'react-alert-template-basic';
 import Header from './layout/Header';
 import Alerts from './layout/Alerts';
-import Register from './accounts/Register';
-import Login from './accounts/Login';
+import Register from './account/Register';
+import Login from './account/Login';
 import Dashboard from './layout/Dashboard';
+import Homepage from './homepage/Homepage';
 import PrivateRoute from './common/PrivateRoute';
 import store from '../store';
 import { loadUser } from '../actions/auth'
 import 'babel-polyfill';
+import '../assets/scss/nav.scss';
 
 
 // alert options
@@ -41,16 +43,18 @@ class App extends Component
                 <AlertProvider template={AlertTemplate} {...alertOptions}>
                     <Alerts />
                     <Router>
-                        <Fragment>
-                            <Header />
-                            <div className="container">
+                        <nav className="App">
+                            <Fragment>
+                                <Header />
                                 <Switch>
-                                    <PrivateRoute exact path="/" component={Dashboard} />
+                                    <PrivateRoute exact path="/dashboard" component={Dashboard} />
                                     <Route exact path="/register" component={Register} />
                                     <Route exact path="/login" component={Login} />
+                                    <Route exact path="/homepage" component={Homepage} />
+                                    <Route exact path="/" component={Homepage} />
                                 </Switch>
-                            </div>
-                        </Fragment>
+                            </Fragment>
+                        </nav>
                     </Router>
                 </AlertProvider>
             </Provider>
