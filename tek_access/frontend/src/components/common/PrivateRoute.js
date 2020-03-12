@@ -14,7 +14,7 @@ const PrivateRoute = ({
                 if (auth.isLoading) {
                     return <h2>Loading...</h2>
                 } else if (!auth.isAuthenticated) {
-                    return <Redirect to="/login" />
+                    return <Redirect to="/homepage" />
                 } else {
                     return <Component {...props} />
                 }
