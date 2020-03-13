@@ -9,4 +9,5 @@ __pycache__/
 *.pyc
 package-lock.json
 static
+frontend/static
 tek_access/frontend/static/frontend/main.js
