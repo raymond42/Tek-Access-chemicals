@@ -18,6 +18,7 @@ import Register from './account/Register';
 import Login from './account/Login';
 import Dashboard from './layout/Dashboard';
 import Homepage from './homepage/Homepage';
+import About from './about/About';
 import PrivateRoute from './common/PrivateRoute';
 import store from '../store';
 import { loadUser } from '../actions/auth'
@@ -51,6 +52,7 @@ class App extends Component
                                     <Route exact path="/register" component={Register} />
                                     <Route exact path="/login" component={Login} />
                                     <Route exact path="/homepage" component={Homepage} />
+                                    <Route exact path="/about" component={About} />
                                     <Route exact path="/" component={Homepage} />
                                 </Switch>
                             </Fragment>
