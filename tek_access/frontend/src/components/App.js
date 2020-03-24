@@ -19,11 +19,15 @@ import Login from './account/Login';
 import Dashboard from './layout/Dashboard';
 import Homepage from './homepage/Homepage';
 import About from './about/About';
+import Products from './products/Products';
+import Kits from './products/Kits';
 import PrivateRoute from './common/PrivateRoute';
 import store from '../store';
 import { loadUser } from '../actions/auth'
 import 'babel-polyfill';
 import '../assets/scss/nav.scss';
+import SingleProduct from './products/SingleProduct';
+import SingleKit from './products/SingleKit';
 
 
 // alert options
@@ -53,6 +57,10 @@ class App extends Component
                                     <Route exact path="/login" component={Login} />
                                     <Route exact path="/homepage" component={Homepage} />
                                     <Route exact path="/about" component={About} />
+                                    <Route exact path="/products" component={Products} />
+                                    <Route exact path="/product/:id" component={SingleProduct} />
+                                    <Route exact path="/kit/:id" component={SingleKit} />
+                                    <Route exact path="/kits" component={Kits} />
                                     <Route exact path="/" component={Homepage} />
                                 </Switch>
                             </Fragment>
