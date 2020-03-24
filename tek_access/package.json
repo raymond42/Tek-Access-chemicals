@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development --watch ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./tek_access/frontend/src/index.js --output ./tek_access/frontend/static/frontend/main.js"
+    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/frontend/main.js"
+  },
+  "engines": {
+    "node": "10.16.0",
+    "npm": "6.9.0"
   },
   "author": "Raymond Gakwaya",
   "license": "ISC",
